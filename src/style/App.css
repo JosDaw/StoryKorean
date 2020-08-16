@@ -9,6 +9,7 @@ a {
   text-decoration: none;
   color: inherit;
   font-family: 'Crete Round', serif;
+  transition: color 0.3s ease-in;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,7 +23,7 @@ p {
 
 button {
   font-family: 'Crete Round', sans-serif;
-  transition: background-color 1s ease-in;
+  transition: background-color 1s, color 1s ease-in;
 }
 
 #app {
@@ -36,7 +37,7 @@ nav {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 5rem;
+  height: 4rem;
   margin: 0 auto;
   width: fit-content;
   border-bottom: 3px solid #D96459;
@@ -55,8 +56,6 @@ nav .logo img{
 /**navDropdown **/
 .navDropdown {
   position: relative;
-  margin-left: 0.5rem;
-
 }
 
 .navDropBtn {
@@ -73,6 +72,7 @@ nav .logo img{
   justify-content: space-evenly;
   align-items: center;
   font-family: 'Crete Round', serif;
+  margin: 0.5rem;
 }
 
 .navDropdown:hover .navDropBtn {
@@ -123,6 +123,69 @@ footer {
   text-align: center;
 }
 
+/**ABOUT **/
+.about {
+  text-align: center;
+}
+
+.about button{
+  font-size: 1rem;
+  background-color: #588C7E;
+  color: white;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  text-decoration: none;
+  border: none;
+  margin: 0.2rem;
+}
+
+.about button:hover {
+  background-color: #AEE8BA;
+  color: #000000;
+}
+
+/**RESOURCES **/ 
+.resources {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.resourcesBox {
+  border: 2px solid #D96459;
+  border-radius: 0.3rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 30%;
+  color: #D96459;
+}
+
+.resourcesSection {
+  border: 1px solid #AEE8BA;
+  border-radius: 0.3rem;
+  margin: 0.2rem;
+  padding: 0.2rem;
+}
+
+.resources h3 {
+  color: #588C7E;
+}
+
+.resources ul {
+  padding: 0;
+  margin: 0;
+}
+
+.resources li {
+  list-style-type: none;
+  color: #000000;
+}
+
+.resources a:hover {
+  color: #588C7E;
+}
 /**HOME  **/
 .headerTitle {
   text-align: center;
@@ -151,60 +214,64 @@ footer {
 .levelSection {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
+  max-width: 90%;
 }
 
-.levelSection h2 a {
+.levelSection h1 {
   color: #8C4646;
-  border-radius: 0.5rem;
-  border: 1px solid #8C4646;
-  margin: 0.3rem;
 }
 
-.levelSection a {
-  border: 1px solid #D96459;
-  border-radius: 0.3rem;
-  color:#D96459;
-  padding: 0.5rem;
+.levelSection h1:hover {
+  color: #588C7E;
+}
+
+.levelSectionStory {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.3rem;
   margin: 0.3rem;
+  color: #D96459;
   font-size: 1.5rem;
-  transition: background-color 1s, color 1s ease-in;
+  border-radius: 0.5rem;
+  border: 1px solid #D96459;
+  transition: background-color 1s ease-in;
 }
 
-.levelSection a:hover {
+.levelSectionStory p {
+  margin: 0 auto;
+  padding: 0.1rem;
+}
+
+.levelSectionStory img {
+  max-width: 5rem;
+  border: 2px solid #588C7E;
+}
+
+.levelSectionStory:hover {
   background-color: #D96459;
   color: #ffffff;
 }
 
-/*tip box */
-.headerTitle .tipBox {
-  border: solid #588C7E;
-  border-radius: 1em;
-  color:#D96459;
-  padding: 1rem;
-  width: fit-content;
-  font-size: 1rem;
-}
-
-/**TOOL TIPS**/
-.hoverword {
-  color: #588C7E;
-  font-style: normal;
-  font-weight: bold;
-}
-
-.hoverword:hover {
-  text-decoration: underline;
-}
-
-.tooltip {
-  font-size: 1.3rem !important;
-}
 
 /**STORY**/
 .storyMain {
   display: flex;
   flex-direction: column;
+}
+
+.storyImage {
+  width: 100%;
+  text-align: center;
+}
+
+.storyImage img {
+  width: 10rem;
+  max-height: 15rem;
+  border: 2px solid #588C7E;
 }
 
 .storyContent {
@@ -213,6 +280,27 @@ footer {
   align-items: center;
   white-space: pre-wrap;
   text-align: center;
+}
+
+.moreStories {
+  margin: 1rem;
+}
+
+.moreStories button{
+  font-size: 1rem;
+  background-color: #588C7E;
+  color: white;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  text-decoration: none;
+  border: none;
+  margin: 0.2rem;
+  cursor: pointer;
+}
+
+.moreStories button:hover {
+  background-color: #AEE8BA;
+  color: #000000;
 }
 
 .storyChapter {
@@ -224,35 +312,41 @@ footer {
   align-items: flex-start;
   justify-content: space-around;
   width: 100%;
+  border-top: 1px solid #BFBFBF;
 }
 
 .storyChapter>div {
   margin-top: 0.5rem;
 }
 
-.storyChapter h3 {
-  text-transform: uppercase;
+.storyChapterTitle {
   width: 100%;
-  margin: 0 auto;
-  padding: 0.5rem;
-  font-family: 'Crete Round', sans-serif;
-  background-color: #588C7E;
-  border-radius: 0.3rem;
-  color: #ffffff;
-  transition: background-color 1s, color 1s ease-in;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.storyText {
-  font-size: 1.2rem;
+.storyChapter h3 {
+  font-size: 1.5rem;
+  border-bottom: 3px solid #588C7E;
+  text-transform: uppercase;
+  font-family: 'Crete Round', sans-serif;
+  color: #588C7E;
+  transition: color 1s ease-in;
 }
 
 .storyChapter h3:hover {
-  background-color: #AEE8BA;
   color: #000000;
 }
 
 .storyChapter p {
   margin-top: 0.5rem;
+}
+
+.storyText {
+  font-size: 1.2rem;
+  max-width: 70%  ;
 }
 
 .koreanText {
@@ -268,7 +362,12 @@ footer {
 .storyLearning {
   display: flex;
   flex-direction: column;
-  max-width: 45%;
+  max-width: 35%;
+}
+
+.storyLearning h4 {
+  font-size: 1.5rem;
+  text-decoration-line: underline overline;
 }
 
 .storyLearning>div {
@@ -280,13 +379,20 @@ footer {
 .vocabList {
   border: 3px solid rgb(220, 241, 236);
 }
+
 .vocabList p {
   text-transform: capitalize;
 }
 
 .vocabList h4{
-  font-size: 1.5rem;
-  text-decoration-line: underline overline;
+  color: #588C7E;
+}
+
+.cultureNote {
+  border: 3px solid rgb(220, 241, 236);
+}
+
+.cultureNote h4 {
   color: #588C7E;
 }
 
@@ -295,13 +401,15 @@ footer {
 }
 
 .grammarTip h4 {
-  font-size: 1.5rem;
-  text-decoration-line: underline overline;
   color: #D96459;
 }
 
 .grammarTip span {
   color: #D96459;
+}
+
+.grammarTip .koreanText {
+  color: #588C7E;
 }
 
 .grammarTip button{
@@ -349,7 +457,6 @@ footer {
   border-radius: 0.3rem;
   padding: 0.3rem;
   margin: 0.5rem;
-  margin-bottom: 1rem;
 }
 
 .storyQuiz h2 {
@@ -370,9 +477,16 @@ footer {
 /**FONT SIZE ADJUST **/
 .fontAdjust {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   color: #588C7E;
+}
+
+.fontAdjust p {
+  width: 100%;
+  text-align: center;
 }
 
 .fontAdjust button{
@@ -462,6 +576,15 @@ footer {
 
   .storyLearning {
     max-width: 100%;
+  }
+
+  .resourcesBox {
+    border: 2px solid #D96459;
+    border-radius: 0.3rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    color: #D96459;
   }
 }
 

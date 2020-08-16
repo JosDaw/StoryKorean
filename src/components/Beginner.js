@@ -77,7 +77,7 @@ export default class Beginner extends React.Component{
         <header className="headerTitle">
           <h1>Beginner</h1>
           <p>
-            Each Easy story uses simplified grammar and a shortened plot. It also has lots of vocabulary hints.
+            Each Beginner story uses simplified grammar and a shortened plot.
             <br/>
             This level is recommended for people who have some grammar knowledge, but want to boost their reading skills. 
           </p>
@@ -88,9 +88,14 @@ export default class Beginner extends React.Component{
             {allStories['beginnerStories'].map((story)=>{
               return (
                 <Link to={story.link} key={uuid()} onClick={this.refreshComponent}>
-                  {story.koTitle}
-                  <br/>
-                  {story.title}
+                  <div className="levelSectionStory">
+                    <img src={story.imageLink} alt={story.title}/>
+                    <p>
+                      {story.koTitle}
+                      <br/>
+                      {story.title}
+                    </p>
+                  </div>
                 </Link>
               )
             })}

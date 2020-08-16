@@ -25,16 +25,24 @@ export default class Home extends React.Component{
 
         <div className="homeContent">
           <div className="levelSection">
+            <h1>
               <Link to="/beginner">
                 Beginner
               </Link>
+            </h1>
+
 
             {allStories['beginnerStories'].map((story)=>{
               return (
-                <Link to={story.link} key={uuid()}>
-                  {story.koTitle}
-                  <br/>
-                  {story.title}
+                <Link to={story.link} key={uuid()} onClick={this.refreshComponent}>
+                  <div className="levelSectionStory">
+                    <img src={story.imageLink} alt={story.title}/>
+                    <p>
+                      {story.koTitle}
+                      <br/>
+                      {story.title}
+                    </p>
+                  </div>
                 </Link>
               )
             })}
@@ -42,14 +50,22 @@ export default class Home extends React.Component{
           </div>
 
           <div className="levelSection">
-            <Link to="/Intermediate">Intermediate</Link>
+            <h1>
+            <Link to="/intermediate">Intermediate</Link>
+            </h1>
+           
 
             {allStories['intermediateStories'].map((story)=>{
               return (
-                <Link to={story.link} key={uuid()}>
-                  {story.koTitle}
-                  <br/>
-                  {story.title}
+                <Link to={story.link} key={uuid()} onClick={this.refreshComponent}>
+                  <div className="levelSectionStory">
+                    <img src={story.imageLink} alt={story.title}/>
+                    <p>
+                      {story.koTitle}
+                      <br/>
+                      {story.title}
+                    </p>
+                  </div>
                 </Link>
               )
             })}

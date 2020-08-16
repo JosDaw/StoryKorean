@@ -4,6 +4,7 @@ import uuid from 'react-uuid';
 import ShowEnglish from './ShowEnglish';
 import { connect } from "react-redux";
 import {Helmet} from 'react-helmet';
+import {Link} from 'react-router-dom';
 
 class Story extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class Story extends React.Component {
       currentStoryGrammar: [],
       currentStoryVocab: [],
       currentStoryQuestions: [],
+      currentStoryCulture: [],
       storyLoaded: false,
       selectedOption: 0,
       fontSize: 'regularFont'
@@ -50,6 +52,9 @@ class Story extends React.Component {
           currentStoryVocab: allStories['beginnerStories'][i].vocabList,
           currentStoryGrammar: allStories['beginnerStories'][i].grammarTip,
           currentStoryQuestions: allStories['beginnerStories'][i].quiz,
+          currentStoryImage: allStories['beginnerStories'][i].imageLink,
+          currentStoryCulture: allStories['beginnerStories'][i].cultureNote,
+          currentStoryAuthor: allStories['beginnerStories'][i].author,
           storyLoaded: true
         })
         return
@@ -86,6 +91,7 @@ class Story extends React.Component {
     const chapters = this.state.currentStoryContent.map((chapter, index) => {
       const chapNum = index+1;
       const grammar = this.state.currentStoryGrammar[index];
+      const culture = this.state.currentStoryCulture !== null ? this.state.currentStoryCulture[index] : null;
       const fontSize = this.state.fontSize;
       let vocab = [];
       for (const property in this.state.currentStoryVocab[index]) {
@@ -94,7 +100,10 @@ class Story extends React.Component {
     
       return (
         <div className={`${fontSize} storyChapter`} key={uuid()}>
-          <h3>Chapter {chapNum}</h3>
+          <div className="storyChapterTitle">
+            <h3>Chapter {chapNum}</h3>
+          </div>
+
           <div className="storyText">
             <p className={`${fontSize} koreanText`}>
               {this.parseStoryText(chapter)[0]}
@@ -118,12 +127,25 @@ class Story extends React.Component {
                 <span>{grammar['transExample']}</span>
                 <br/>
                 {grammar['grammarExpl']}
+              </p>
+              {grammar['grammarLink'] !== null ?
+                <button>
+                  <a href={grammar['grammarLink']}>More Grammar Info</a>
+                </button>
+                : null
+              }                
 
-              </p>                
-              <button>
-                <a href={grammar['grammarLink']}>More Grammar Info</a>
-              </button>
             </div>
+
+            {culture !== null ?
+              <div className="cultureNote">
+                <h4>Culture Note</h4>
+                <p>{culture}</p>
+              </div>
+
+              :null
+            }
+
           </div>
         </div>
       )
@@ -251,6 +273,11 @@ class Story extends React.Component {
           <h2>{this.state.currentStoryTitle}</h2>
         </header>
 
+        <div className="storyImage">
+          <img src={this.state.currentStoryImage} alt={this.state.currentStoryTitle}/>
+          <p>Author: {this.state.currentStoryAuthor}</p>
+        </div>
+
         <div className="fontAdjust">
           <p>Adjust Font Size: </p>
           <button onClick={()=> {this.setState({fontSize: 'regularFont'})}}>Regular</button>
@@ -260,7 +287,13 @@ class Story extends React.Component {
 
         <div className={`storyContent`}>
           {this.state.storyLoaded ? this.generateChapters() : null}
-          {this.state.storyLoaded ? this.generateQuiz() : null}
+          {this.state.currentStoryQuestions !== null ? this.generateQuiz() : null}
+
+          
+
+          <Link className="moreStories" to="/beginner">
+            <button >More Beginner Stories</button>
+          </Link>
         </div>
 
         <ShowEnglish />

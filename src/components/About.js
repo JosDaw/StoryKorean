@@ -11,17 +11,19 @@ export default class About extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className="about">
         <header className="headerTitle">
           <h1>About StoryKorean</h1>
         </header>
 
-        <div className="homeContent">
-        <p>
-          This website collects Korean stories to help learners to read Korean. 
-          The content of this website cannot be used without permission from the website owner. 
-        </p>
-        </div>
+          <p>
+            This website collects Korean stories to help learners to read Korean. 
+            <br/>
+            The content of this website cannot be used without permission. 
+          </p>
+          <button>
+            <a href="mailto:josmdaw@gmail.com">Send an Email?</a>
+          </button>
       </div>
     )
   }
