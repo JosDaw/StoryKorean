@@ -1,0 +1,489 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Nanum+Gothic:wght@400;700;800&display=swap');
+body {
+  font-family: 'Crete Round', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: 'Crete Round', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  font-family: 'Crete Round', sans-serif;
+  transition: background-color 1s ease-in;
+}
+
+#app {
+  min-height: 100vh;
+  position: relative;
+}
+
+/**NAVIGATION**/
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  margin: 0 auto;
+  width: fit-content;
+  border-bottom: 3px solid #D96459;
+}
+
+nav .logo img{
+  height: 2rem;
+}
+
+.mainNavButtons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/**navDropdown **/
+.navDropdown {
+  position: relative;
+  margin-left: 0.5rem;
+
+}
+
+.navDropBtn {
+  width: 11rem;
+  border-radius: 0.3rem;
+  border: none;
+  background-color: #D96459;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  box-shadow: none;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: 'Crete Round', serif;
+}
+
+.navDropdown:hover .navDropBtn {
+  background-color: #8C4646;
+}
+
+.navDropdown:hover .navIcon {
+  animation: grow 1s ease-in-out alternate infinite;
+}
+
+.navDropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: inherit;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: center;
+}
+
+.navDropdown-content a {
+  color: #D86459;
+  padding: 0.5rem;
+  text-decoration: none;
+  display: block;
+  transition: background-color 1s, color 1s ease-in;
+}
+
+.navDropdown-content a:hover {
+  background-color: #8C4646;
+  color: #ffffff;
+}
+
+.navDropdown:hover .navDropdown-content {
+  display: block;
+}
+
+/**FOOTER**/
+footer {
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #D96459;
+  text-align: center;
+}
+
+/**HOME  **/
+.headerTitle {
+  text-align: center;
+  color: #8C4646;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerTitle p {
+  font-size: 1.5rem;
+  color: #D96459;
+  text-align: center;
+  margin: 0;
+}
+
+.homeContent {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.levelSection {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.levelSection h2 a {
+  color: #8C4646;
+  border-radius: 0.5rem;
+  border: 1px solid #8C4646;
+  margin: 0.3rem;
+}
+
+.levelSection a {
+  border: 1px solid #D96459;
+  border-radius: 0.3rem;
+  color:#D96459;
+  padding: 0.5rem;
+  margin: 0.3rem;
+  font-size: 1.5rem;
+  transition: background-color 1s, color 1s ease-in;
+}
+
+.levelSection a:hover {
+  background-color: #D96459;
+  color: #ffffff;
+}
+
+/*tip box */
+.headerTitle .tipBox {
+  border: solid #588C7E;
+  border-radius: 1em;
+  color:#D96459;
+  padding: 1rem;
+  width: fit-content;
+  font-size: 1rem;
+}
+
+/**TOOL TIPS**/
+.hoverword {
+  color: #588C7E;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.hoverword:hover {
+  text-decoration: underline;
+}
+
+.tooltip {
+  font-size: 1.3rem !important;
+}
+
+/**STORY**/
+.storyMain {
+  display: flex;
+  flex-direction: column;
+}
+
+.storyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: pre-wrap;
+  text-align: center;
+}
+
+.storyChapter {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.storyChapter>div {
+  margin-top: 0.5rem;
+}
+
+.storyChapter h3 {
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  font-family: 'Crete Round', sans-serif;
+  background-color: #588C7E;
+  border-radius: 0.3rem;
+  color: #ffffff;
+  transition: background-color 1s, color 1s ease-in;
+}
+
+.storyText {
+  font-size: 1.2rem;
+}
+
+.storyChapter h3:hover {
+  background-color: #AEE8BA;
+  color: #000000;
+}
+
+.storyChapter p {
+  margin-top: 0.5rem;
+}
+
+.koreanText {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.engText {
+  color: #D96459;
+  font-family: 'Crete Round', sans-serif;
+  font-size: large;
+}
+
+.storyLearning {
+  display: flex;
+  flex-direction: column;
+  max-width: 45%;
+}
+
+.storyLearning>div {
+  margin-top: 0.5rem;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+}
+
+.vocabList {
+  border: 3px solid rgb(220, 241, 236);
+}
+.vocabList p {
+  text-transform: capitalize;
+}
+
+.vocabList h4{
+  font-size: 1.5rem;
+  text-decoration-line: underline overline;
+  color: #588C7E;
+}
+
+.grammarTip {
+  border: 3px solid #FFF1E6;
+}
+
+.grammarTip h4 {
+  font-size: 1.5rem;
+  text-decoration-line: underline overline;
+  color: #D96459;
+}
+
+.grammarTip span {
+  color: #D96459;
+}
+
+.grammarTip button{
+  font-size: 1rem;
+  background-color: #D96459; 
+  color: white;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  text-decoration: none;
+  border: none;
+}
+
+.grammarTip button:hover {
+  background-color: #8C4646;
+  color: white;
+}
+
+.showEnglishContainer {
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+}
+
+.showEnglishBtn {
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #C82333;
+  color: #ffffff;
+  text-shadow: 1px 1px #8C4646;
+  padding: 1rem;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.showEnglishBtn:hover {
+  background-color: #8C4646;
+  animation: grow 1s ease-in-out alternate infinite;
+}
+
+.storyQuiz {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid rgb(220, 241, 236);
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.storyQuiz h2 {
+  color: #588C7E;
+  text-decoration: underline;
+}
+
+.storyQuiz h3 {
+  color: #C82333;
+}
+
+.storyQuiz label {
+  display: block;
+  text-align: left;
+  padding: 0.3rem;
+}
+
+/**FONT SIZE ADJUST **/
+.fontAdjust {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #588C7E;
+}
+
+.fontAdjust button{
+  font-size: 1rem;
+  background-color: #D96459; 
+  color: white;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  text-decoration: none;
+  border: none;
+  margin: 0.2rem;
+}
+
+.fontAdjust button:hover {
+  background-color: #8C4646;
+  color: white;
+}
+
+.regularFont {
+  font-size: initial;
+}
+
+.largeFont {
+  font-size: x-large;
+}
+
+.xLargeFont {
+  font-size: xx-large;
+}
+
+
+
+@media (max-width: 768px) {
+  nav {
+    justify-content: space-evenly;
+    padding: 0.3rem;
+    width: 95%;
+  }
+
+  .navBurger {
+    font-size: 2rem;
+    color: #D96459;
+  }
+
+  /*Side Menu*/
+  #visibleSideMenu{
+    border: 1px solid #D96459;
+    background-color: white;
+    color: #D96459;
+    width: 50%;
+    text-transform: uppercase;
+    padding: 0;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    animation: slidein 1s;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .visibleCloseMenu {
+    color: #D96459;
+    font-size: small;
+    border: 1px solid #D96459;
+    margin: 0.5rem;
+    text-align: center;
+    display: block;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  #visibleSideMenu .mainNavButtons {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .navDropdown {
+    margin-left: 0;
+  }
+
+  .storyLearning {
+    max-width: 100%;
+  }
+}
+
+
+/**KEYFRAMES **/
+/*Animation for the sidemenu*/
+@keyframes slidein{
+  0% {
+    top:0;
+    left: -350px;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes grow{
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
