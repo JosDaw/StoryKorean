@@ -125,10 +125,18 @@ function About() {
           This website collects Korean stories to help learners to read Korean. 
           <br/>
           The content of this website cannot be used without permission. 
+          <br/>
+          Please feel free to leave a comment or suggestion about the site using the box below.
         </p>
-        <button>
-          <a href="mailto:josmdaw@gmail.com">Send an Email?</a>
-        </button>
+
+        <form name="contact" method="post">
+          <input type="hidden" name="form-name" value="contact" />
+            <label>Your Name: <input type="text" name="name"/></label>
+            <label>Your Email: <input type="email" name="email"/></label>
+            <label>Message: <textarea name="message"></textarea></label>
+            <button type="submit">Send</button>
+        </form>
+
     </div>
   )
 }

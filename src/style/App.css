@@ -129,7 +129,24 @@ footer {
   text-align: center;
 }
 
+.about form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about label {
+  margin: 0.3rem;
+  color: #D96459;
+}
+
+.about input,textarea {
+  border-radius: 0.3rem;
+}
+
 .about button{
+  width: fit-content;
   font-size: 1rem;
   background-color: #588C7E;
   color: white;
