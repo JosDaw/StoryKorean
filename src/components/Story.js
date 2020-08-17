@@ -38,23 +38,23 @@ class Story extends React.Component {
    */
   fetchStory = () => {
 
-    for(let i =0; i< allStories['beginnerStories'].length; i++){
-      const urlParse = allStories['beginnerStories'][i].link;
+    for(let i =0; i< allStories[this.props.type].length; i++){
+      const urlParse = allStories[this.props.type][i].link;
       const splitStringURL = urlParse.split("=");
       const storyName = splitStringURL[1];
 
       if(storyName === this.props.URL)
       {
         this.setState({
-          currentStoryTitle: allStories['beginnerStories'][i].title, 
-          currentStoryKoreanTitle: allStories['beginnerStories'][i].koTitle,
-          currentStoryContent: allStories['beginnerStories'][i].chapters,
-          currentStoryVocab: allStories['beginnerStories'][i].vocabList,
-          currentStoryGrammar: allStories['beginnerStories'][i].grammarTip,
-          currentStoryQuestions: allStories['beginnerStories'][i].quiz,
-          currentStoryImage: allStories['beginnerStories'][i].imageLink,
-          currentStoryCulture: allStories['beginnerStories'][i].cultureNote,
-          currentStoryAuthor: allStories['beginnerStories'][i].author,
+          currentStoryTitle: allStories[this.props.type][i].title, 
+          currentStoryKoreanTitle: allStories[this.props.type][i].koTitle,
+          currentStoryContent: allStories[this.props.type][i].chapters,
+          currentStoryVocab: allStories[this.props.type][i].vocabList,
+          currentStoryGrammar: allStories[this.props.type][i].grammarTip,
+          currentStoryQuestions: allStories[this.props.type][i].quiz,
+          currentStoryImage: allStories[this.props.type][i].imageLink,
+          currentStoryCulture: allStories[this.props.type][i].cultureNote,
+          currentStoryAuthor: allStories[this.props.type][i].author,
           storyLoaded: true
         })
         return
@@ -90,7 +90,7 @@ class Story extends React.Component {
   generateChapters = () => {
     const chapters = this.state.currentStoryContent.map((chapter, index) => {
       const chapNum = index+1;
-      const grammar = this.state.currentStoryGrammar[index];
+      const grammar = this.state.currentStoryGrammar !== null ? this.state.currentStoryGrammar[index] : null;
       const culture = this.state.currentStoryCulture !== null ? this.state.currentStoryCulture[index] : null;
       const fontSize = this.state.fontSize;
       let vocab = [];
@@ -119,23 +119,27 @@ class Story extends React.Component {
               <p>{vocab}</p>
             </div>
 
-            <div className="grammarTip">
-              <h4>Grammar Tip</h4>
-              <p>
-                Example: <span className="koreanText">{grammar['example']}</span>
-                <br/>
-                <span>{grammar['transExample']}</span>
-                <br/>
-                {grammar['grammarExpl']}
-              </p>
-              {grammar['grammarLink'] !== null ?
-                <button>
-                  <a href={grammar['grammarLink']}>More Grammar Info</a>
-                </button>
-                : null
-              }                
+            {this.state.currentStoryGrammar !== null ?
+              <div className="grammarTip">
+                <h4>Grammar Tip</h4>
+                <p>
+                  Example: <span className="koreanText">{grammar['example']}</span>
+                  <br/>
+                  <span>{grammar['transExample']}</span>
+                  <br/>
+                  {grammar['grammarExpl']}
+                </p>
+                {grammar['grammarLink'] !== null ?
+                  <button>
+                    <a href={grammar['grammarLink']}>More Grammar Info</a>
+                  </button>
+                  : null
+                }                
+              </div>
+            : null
+            }
 
-            </div>
+
 
             {culture !== null ?
               <div className="cultureNote">
@@ -289,10 +293,8 @@ class Story extends React.Component {
           {this.state.storyLoaded ? this.generateChapters() : null}
           {this.state.currentStoryQuestions !== null ? this.generateQuiz() : null}
 
-          
-
-          <Link className="moreStories" to="/beginner">
-            <button >More Beginner Stories</button>
+          <Link className="moreStories" to="/">
+            <button>More Stories</button>
           </Link>
         </div>
 

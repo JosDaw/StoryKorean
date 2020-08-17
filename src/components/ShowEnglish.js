@@ -18,6 +18,7 @@ class ShowEnglish extends React.Component{
   render(){
     return (
       <div className="showEnglishContainer">
+        <div className="showEngDirections">Click the button to see the English translation!</div>
         <button className="showEnglishBtn" onClick={()=>{this.toggleEnglish()}}>
           {this.props.showEng ? "Hide English" : "Show English"}
         </button>

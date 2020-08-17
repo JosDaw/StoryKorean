@@ -14,6 +14,7 @@ import {ScrollToTop} from '../src/components/functions';
 import Beginner from '../src/components/Beginner';
 import About from '../src/components/About';
 import Resources from '../src/components/Resources';
+import Intermediate from './components/Intermediate';
 
 class App extends React.Component {
   render() {
@@ -44,6 +45,7 @@ class App extends React.Component {
               <Home />
             </Route>
             <Route path="/beginner" component={Beginner} />
+            <Route path="/intermediate" component={Intermediate} /> 
             <Route path="/about">
               <About />
             </Route>

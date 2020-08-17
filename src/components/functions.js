@@ -28,4 +28,3 @@ export function GetURLParams(props) {
     return null
   }
 }
-

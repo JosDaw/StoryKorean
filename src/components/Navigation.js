@@ -58,37 +58,40 @@ export default class Navigation extends React.Component{
 
           {!this.state.displayDeviceMenu ?
             <div className="mainNavButtons">
-
               <div className="navDropdown">
-                <button className="navDropBtn">
-                  Beginner 
-                  <FontAwesomeIcon className="navIcon" icon={faChevronDown}/>
-                </button>
-                  <div className="navDropdown-content">
-                    {allStories['beginnerStories'].map((story) => {
-                      return (
-                        <Link to={story.link} key={uuid()}>
-                          {story.title}
-                        </Link>
-                      )
-                    })}
-                  </div>
+                <Link to="/beginner">
+                  <button className="navDropBtn">
+                    Beginner 
+                    <FontAwesomeIcon className="navIcon" icon={faChevronDown}/>
+                  </button>
+                </Link>
+                <div className="navDropdown-content">
+                  {allStories['beginnerStories'].map((story) => {
+                    return (
+                      <Link to={story.link} key={uuid()}>
+                        {story.title}
+                      </Link>
+                    )
+                  })}
+                </div>
               </div>
 
               <div className="navDropdown">
-                <button className="navDropBtn">
-                  Intermediate 
-                  <FontAwesomeIcon className="navIcon" icon={faChevronDown}/>
-                </button>
-                  <div className="navDropdown-content">
-                    {allStories['intermediateStories'].map((story) => {
-                      return (
-                        <Link to={story.link} key={uuid()}>
-                          {story.title}
-                        </Link>
-                      )
-                    })}
-                  </div>
+                <Link to="/intermediate">
+                  <button className="navDropBtn">
+                    Intermediate 
+                    <FontAwesomeIcon className="navIcon" icon={faChevronDown}/>
+                  </button>
+                </Link>
+                <div className="navDropdown-content">
+                  {allStories['intermediateStories'].map((story) => {
+                    return (
+                      <Link to={story.link} key={uuid()}>
+                        {story.title}
+                      </Link>
+                    )
+                  })}
+                </div>
               </div>
 
               <div className="navDropdown">
@@ -130,7 +133,7 @@ export default class Navigation extends React.Component{
                 </div>
 
                 <div className="navDropdown">
-                <Link to="/intermediate">
+                  <Link to="/intermediate">
                     <button className="navDropBtn">
                       Intermediate 
                     </button>
