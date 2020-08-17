@@ -311,7 +311,7 @@ footer {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
   border-top: 1px solid #BFBFBF;
 }
@@ -348,23 +348,29 @@ footer {
 
 .storyText {
   font-size: 1.2rem;
-  max-width: 65%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .koreanText {
   font-family: 'Nanum Gothic', sans-serif;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
 }
 
 .engText {
   color: #D96459;
   font-family: 'Crete Round', sans-serif;
-  font-size: large;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
 }
 
 .storyLearning {
   display: flex;
   flex-direction: column;
-  max-width: 35%;
+  width: 35%;
 }
 
 .storyLearning h4 {
@@ -534,12 +540,10 @@ footer {
 
   .storyText {
     font-size: 1.2rem;
-    width: 50%;
+    flex-direction: column;
+    width: 55%;
   }
 
-  .storyLearning{
-    max-width: 45%;
-  }
 }
 
 @media (max-width: 768px) {
@@ -554,7 +558,6 @@ footer {
     color: #D96459;
   }
 
-  /*Side Menu*/
   #visibleSideMenu{
     border: 1px solid #D96459;
     background-color: white;
@@ -617,7 +620,13 @@ footer {
 
   .storyText {
     font-size: 1.2rem;
-    max-width: 100%;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .storyLearning {
+    width: 100%;
   }
 }
 

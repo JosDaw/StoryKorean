@@ -59,7 +59,7 @@ export default class Navigation extends React.Component{
           {!this.state.displayDeviceMenu ?
             <div className="mainNavButtons">
               <div className="navDropdown">
-                <Link to="/beginner">
+                <Link to="/stories?beginner">
                   <button className="navDropBtn">
                     Beginner 
                     <FontAwesomeIcon className="navIcon" icon={faChevronDown}/>
@@ -77,7 +77,7 @@ export default class Navigation extends React.Component{
               </div>
 
               <div className="navDropdown">
-                <Link to="/intermediate">
+                <Link to="/stories?intermediate">
                   <button className="navDropBtn">
                     Intermediate 
                     <FontAwesomeIcon className="navIcon" icon={faChevronDown}/>
@@ -125,7 +125,7 @@ export default class Navigation extends React.Component{
                 
 
                 <div className="navDropdown">
-                <Link to="/beginner">
+                <Link to="/stories?beginner">
                     <button className="navDropBtn">
                       Beginner 
                     </button>
@@ -133,7 +133,7 @@ export default class Navigation extends React.Component{
                 </div>
 
                 <div className="navDropdown">
-                  <Link to="/intermediate">
+                  <Link to="/stories?intermediate">
                     <button className="navDropBtn">
                       Intermediate 
                     </button>

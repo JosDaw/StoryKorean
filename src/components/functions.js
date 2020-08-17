@@ -20,11 +20,9 @@ export function ScrollToTop() {
  */
 export function GetURLParams(props) {
   const stringURL = props.location.search;
-  const splitStringURL = stringURL.split("=");
+  const splitURL = stringURL.split("=");
+  const getStoryType = splitURL[0].split("&");
+  const array = [getStoryType[0], splitURL[1]]  
 
-  if(splitStringURL[0] === "?story"){
-    return splitStringURL[1]
-  } else {
-    return null
-  }
+  return array
 }

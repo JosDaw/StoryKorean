@@ -79,6 +79,7 @@ class Story extends React.Component {
       } else {
         koreanArray.push(replaceString);
       }
+
     }
     const bothArray = [koreanArray, englishArray];
     return bothArray
@@ -89,15 +90,18 @@ class Story extends React.Component {
    */
   generateChapters = () => {
     const chapters = this.state.currentStoryContent.map((chapter, index) => {
+
       const chapNum = index+1;
       const grammar = this.state.currentStoryGrammar !== null ? this.state.currentStoryGrammar[index] : null;
       const culture = this.state.currentStoryCulture !== null ? this.state.currentStoryCulture[index] : null;
       const fontSize = this.state.fontSize;
+
       let vocab = [];
       for (const property in this.state.currentStoryVocab[index]) {
         vocab.push(`${this.state.currentStoryVocab[index][property]} - ${property} \n`);
       }
     
+      
       return (
         <div className={`${fontSize} storyChapter`} key={uuid()}>
           <div className="storyChapterTitle">
@@ -267,7 +271,7 @@ class Story extends React.Component {
           {/* Open Graph */}
           <meta property="og:title" content={`Story Korean - ${this.state.currentStoryTitle}`} />
           <meta property="og:type" content="article" />
-          <meta property="og:url" content={`https://www.storykorean.com/beginner?story=${this.props.URL}`} />
+          <meta property="og:url" content={`https://www.storykorean.com/stories${this.props.URLType}&story=${this.props.URL}`} />
           <meta property="og:description" content={`${this.state.currentStoryTitle} - ${this.state.currentStoryKoreanTitle}
             A short story in Korean and English.`} /> 
         </Helmet>

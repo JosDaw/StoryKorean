@@ -9,12 +9,9 @@ import {
 import {Helmet} from 'react-helmet';
 import Navigation from '../src/components/Navigation';
 import Home from '../src/components/Home';
-import Footer from '../src/components/Footer';
 import {ScrollToTop} from '../src/components/functions';
-import Beginner from '../src/components/Beginner';
-import About from '../src/components/About';
 import Resources from '../src/components/Resources';
-import Intermediate from './components/Intermediate';
+import Stories from './components/Stories';
 
 class App extends React.Component {
   render() {
@@ -44,8 +41,7 @@ class App extends React.Component {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/beginner" component={Beginner} />
-            <Route path="/intermediate" component={Intermediate} /> 
+            <Route path="/stories" component={Stories}/>
             <Route path="/about">
               <About />
             </Route>
@@ -80,3 +76,31 @@ function NoMatch() {
   );
 }
 
+function Footer() {
+  return (
+    <footer>
+    <p className="copyright">
+    The content of this website belongs to StoryKorean.com. Copyright © 2019-2020, StoryKorean. All Rights Reserved.
+    </p>
+  </footer>
+  )
+}
+
+function About() {
+  return(
+    <div className="about">
+      <header className="headerTitle">
+        <h1>About StoryKorean</h1>
+      </header>
+
+        <p>
+          This website collects Korean stories to help learners to read Korean. 
+          <br/>
+          The content of this website cannot be used without permission. 
+        </p>
+        <button>
+          <a href="mailto:josmdaw@gmail.com">Send an Email?</a>
+        </button>
+    </div>
+  )
+}
