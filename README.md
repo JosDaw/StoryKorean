@@ -8,6 +8,8 @@ npm install redux
 npm install react-redux 
 npm install --save-dev redux-devtools 
 npm install redux-thunk
+npm install react-ga --save
+npm install --save react-adsense
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

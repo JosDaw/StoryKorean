@@ -1,7 +1,9 @@
 import React from 'react';
+import ReactGA from 'react-ga';
+import { createBrowserHistory } from "history";
 import '../src/style/App.css';
 import { 
-  BrowserRouter,
+  Router,
   Route,
   Switch,
   useLocation,
@@ -13,10 +15,26 @@ import {ScrollToTop} from '../src/components/functions';
 import Resources from '../src/components/Resources';
 import Stories from './components/Stories';
 
+import AdSense from "react-adsense";
+
+ReactGA.initialize("UA-144657526-1");
+
+const history = createBrowserHistory();
+history.listen(location => {
+  ReactGA.set({ page: location.pathname });
+  ReactGA.pageview(location.pathname);
+});
+
+
 class App extends React.Component {
+
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname);
+  }
+
   render() {
     return (
-      <BrowserRouter>
+      <Router history={history}>
         <div id="app">
           {/* Meta tags */}
           <Helmet>
@@ -52,10 +70,20 @@ class App extends React.Component {
               <NoMatch />
             </Route>
           </Switch>
+
+          <AdSense.Google
+              client='ca-pub-1231732280212130"'
+              slot='2466254427'
+              style={{ display: 'block' }}
+              layout='in-article'
+              format='fluid'
+              responsive='true'
+            />
+
           <Footer /> 
         </div>
 
-      </BrowserRouter>
+      </Router>
     )
   }
 }
