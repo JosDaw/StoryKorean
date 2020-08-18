@@ -14,22 +14,19 @@ import Home from '../src/components/Home';
 import {ScrollToTop} from '../src/components/functions';
 import Resources from '../src/components/Resources';
 import Stories from './components/Stories';
-
 import AdSense from "react-adsense";
 
 ReactGA.initialize("UA-144657526-1");
-
 const history = createBrowserHistory();
 history.listen(location => {
   ReactGA.set({ page: location.pathname });
-  ReactGA.pageview(location.pathname);
+  ReactGA.pageview(location.pathname + location.search);
 });
-
 
 class App extends React.Component {
 
   componentDidMount() {
-    ReactGA.pageview(window.location.pathname);
+    ReactGA.pageview(window.location.pathname + window.location.search)
   }
 
   render() {
