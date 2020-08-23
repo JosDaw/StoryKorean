@@ -76,6 +76,15 @@ class App extends React.Component {
               format='fluid'
               responsive='true'
             />
+            
+          <AdSense.Google
+            client='ca-pub-1231732280212130'
+            slot='4214675708'
+            style={{ display: 'block' }}
+            format='auto'
+            responsive='true'
+            layoutKey='-gw-1+2a-9x+5c'
+          />
 
           <Footer /> 
         </div>
