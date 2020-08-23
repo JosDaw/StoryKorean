@@ -69,7 +69,7 @@ class App extends React.Component {
           </Switch>
 
           <AdSense.Google
-              client='ca-pub-1231732280212130"'
+              client='ca-pub-1231732280212130'
               slot='2466254427'
               style={{ display: 'block' }}
               layout='in-article'
