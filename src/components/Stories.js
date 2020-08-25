@@ -166,8 +166,8 @@ export default class Stories extends React.Component{
     return(
       <div key={this.state.key}>
         {this.state.storyName === undefined ? this.storyMenu() : null}
-        {this.state.storyType === "?beginner" ? <Story URL={this.state.storyName} type={'beginnerStories'} URLType={this.state.storyType}/> : null}
-        {this.state.storyType === "?intermediate" ? <Story URL={this.state.storyName} type={'intermediateStories'} URLType={this.state.storyType}/> : null}
+        {this.state.storyType === "?beginner" && this.state.storyName !== undefined ? <Story URL={this.state.storyName} type={'beginnerStories'} URLType={this.state.storyType}/> : null}
+        {this.state.storyType === "?intermediate" && this.state.storyName !== undefined ? <Story URL={this.state.storyName} type={'intermediateStories'} URLType={this.state.storyType}/> : null}
       </div>
     )
   }

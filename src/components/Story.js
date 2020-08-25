@@ -302,7 +302,7 @@ class Story extends React.Component {
           </Link>
         </div>
 
-        <ShowEnglish />
+        {this.props.URL !== undefined ? <ShowEnglish /> : null}
       </div>
     )
   }

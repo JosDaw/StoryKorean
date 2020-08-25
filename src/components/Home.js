@@ -26,7 +26,7 @@ export default class Home extends React.Component{
         <div className="homeContent">
           <div className="levelSection">
             <h1>
-              <Link to="/beginner">
+              <Link to="/stories?beginner">
                 Beginner
               </Link>
             </h1>
@@ -51,7 +51,7 @@ export default class Home extends React.Component{
 
           <div className="levelSection">
             <h1>
-            <Link to="/intermediate">Intermediate</Link>
+            <Link to="/stories?intermediate">Intermediate</Link>
             </h1>
            
 
