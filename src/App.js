@@ -118,7 +118,7 @@ function Footer() {
   return (
     <footer>
     <p className="copyright">
-    The content of this website belongs to StoryKorean.com. Copyright © 2019-2020, StoryKorean. All Rights Reserved.
+    The content of this website belongs to StoryKorean.com. Copyright © 2019-2021, StoryKorean. All Rights Reserved.
     </p>
   </footer>
   )
