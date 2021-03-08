@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  { Suspense, lazy } from 'react';
 import ReactGA from 'react-ga';
 import { createBrowserHistory } from "history";
 import '../src/style/App.css';
@@ -10,11 +10,15 @@ import {
 } from 'react-router-dom';
 import {Helmet} from 'react-helmet';
 import Navigation from '../src/components/Navigation';
-import Home from '../src/components/Home';
+// import Home from '../src/components/Home';
 import {ScrollToTop} from '../src/components/functions';
-import Resources from '../src/components/Resources';
-import Stories from './components/Stories';
+// import Resources from '../src/components/Resources';
+// import Stories from './components/Stories';
 import AdSense from "react-adsense";
+
+const Resources = lazy(() => import('../src/components/Resources'));
+const Home = lazy(() => import('../src/components/Home'));
+const Stories = lazy(() => import('../src/components/Stories'));
 
 ReactGA.initialize("UA-144657526-1");
 const history = createBrowserHistory();
@@ -52,6 +56,23 @@ class App extends React.Component {
 
           <ScrollToTop />
           <Navigation />
+
+          <Suspense fallback={<div className="loadingCenter"><h2>Loading <span className="ellipsisAnim"><span>.</span><span>.</span><span>.</span></span></h2></div>}>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/stories" component={Stories}/>
+            <Route path="/resources">
+              <Resources />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="*">
+              <NoMatch />
+            </Route>
+          </Switch>
+        </Suspense>
+{/* 
           <Switch>
             <Route exact path="/">
               <Home />
@@ -66,7 +87,7 @@ class App extends React.Component {
             <Route path="*">
               <NoMatch />
             </Route>
-          </Switch>
+          </Switch> */}
 
           <AdSense.Google
               client='ca-pub-1231732280212130'
