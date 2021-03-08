@@ -72,23 +72,6 @@ class App extends React.Component {
             </Route>
           </Switch>
         </Suspense>
-{/* 
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/stories" component={Stories}/>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/resources">
-              <Resources />
-            </Route>
-            <Route path="*">
-              <NoMatch />
-            </Route>
-          </Switch> */}
-
           <AdSense.Google
               client='ca-pub-1231732280212130'
               slot='2466254427'

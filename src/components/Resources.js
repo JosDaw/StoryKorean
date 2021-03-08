@@ -63,6 +63,7 @@ export default class Resources extends React.Component{
             <h2>Grammar</h2>
             <h3>All Levels</h3>
               <ul>
+                <li><a href="https://rawkorean.com">Raw Korean</a></li>
                 <li><a href="https://kiipgrammar.com">KIIPGrammar</a></li>
                 <li><a href="http://koreangrammaticalforms.com/index.php">Korean Grammar Dictionary</a></li>
                 <li><a href="https://www.howtostudykorean.com/">How to Study Korean</a></li>
@@ -102,6 +103,7 @@ export default class Resources extends React.Component{
           <div className="resourcesBox">
             <h2>Vocabulary</h2>
               <ul>
+                <li><a href="https://rawkorean.com">Raw Korean</a></li>
                 <li><a href="https://www.verbix.com/languages/korean.html">Verbix - Verb conjugator</a></li>
                 <li><a href="https://koreanverb.app/?search=%ED%95%98%EB%8B%A4">Dongsa - Verb conjugator</a></li>
                 <li><a href="https://en.wiktionary.org/wiki/%EA%B0%80%EB%8B%A4">Wiktionary</a></li>
@@ -172,26 +174,6 @@ export default class Resources extends React.Component{
                   <li><a href="https://www.slideshare.net/keytokorean/how-to-register-for-the-free-kiip-korean-class"> Slideshare Guide</a></li>
                   <li><a href="https://keytokorean.com/fun/tech/how-to-register-for-the-free-kiip-korean-class/">Key to Korean Guide</a></li>
                 </ul>
-              </div>
-
-              <div className="resourcesSection"> 
-                <h3>2020 Level Test Dates</h3>
-                <ul>
-                  <li><del>January 11 - Results: January 23</del></li>
-                  <li><del>January 18 - Results: January 31</del></li>
-                  <li><del>June 20 - Results: July 3</del></li>
-                  <li><del>July 11 - Results: July 24</del></li>
-                  <li><del>July 25 - Results: August 7</del></li>
-                  <li><del>August 8 - Results: August 21</del></li>
-                  <li>August 29 - Results: September 11</li>
-                  <li>September 19 - Results: October 7</li>
-                  <li>October 17 - Results: October 30</li>
-                  <li>October 31 - Results: November 13</li>
-                  <li>November 14 - Results: November 27</li>
-                  <li>December 5 - Results: December 18</li>
-                  <li>January 8 - Results: January 17</li>
-                </ul>
-                <p>Note: The registration period for the level test is 2-3 weeks before the exam, and lasts for 1 week</p>
               </div>
 
               <div className="resourcesSection"> 
