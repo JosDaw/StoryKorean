@@ -3,6 +3,7 @@ This project was created to encourage Korean learning through reading Korean fol
 <br/>
 Visit the live site <a href="https://storykorean.com">StoryKorean.com</a>
 
+
 ## Introduction
 This project was initially created in 2019 as a very basic vanilla JS site. 
 In August 2020, it was re-developed as a React/Redux site to increase the site speed and user-friendliness.
