@@ -18,6 +18,7 @@ This project is 90% complete, but additional stories will be added in the future
 
 ## Usage
 This project can be converted to other languages (such as French, Japanese, etc.) by following the format of the storyList.js JSON
+To use, simply fork the project and type 'npm install' in the terminal.
 
 ## Dependencies
 - react-router-dom

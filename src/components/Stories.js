@@ -162,7 +162,6 @@ export default class Stories extends React.Component{
   }
 
   render(){
-    console.log(GetURLParams(this.props))
     return(
       <div key={this.state.key}>
         {this.state.storyName === undefined ? this.storyMenu() : null}

@@ -5,6 +5,7 @@ import ShowEnglish from './ShowEnglish';
 import { connect } from "react-redux";
 import {Helmet} from 'react-helmet';
 import {Link} from 'react-router-dom';
+import {Tooltip} from '../components/functions';
 
 class Story extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Story extends React.Component {
       currentStoryVocab: [],
       currentStoryQuestions: [],
       currentStoryCulture: [],
+      currentStoryToolTip: [],
       storyLoaded: false,
       selectedOption: 0,
       fontSize: 'regularFont'
@@ -55,11 +57,46 @@ class Story extends React.Component {
           currentStoryImage: allStories[this.props.type][i].imageLink,
           currentStoryCulture: allStories[this.props.type][i].cultureNote,
           currentStoryAuthor: allStories[this.props.type][i].author,
+          currentStoryToolTip:  allStories[this.props.type][i].toolTip,
           storyLoaded: true
         })
         return
       } 
     }
+  }
+
+  //Function to apply hover tooltips on select vocab
+  generateToolTips = (korean, thisChapter) => {
+   let koreanChapt = korean.split(" ");  
+   let currentTips = this.state.currentStoryToolTip[thisChapter];
+
+   const entries = Object.entries(currentTips);
+
+
+
+    let vocabTip = koreanChapt.map((word, index)=>{ 
+      let span = '';
+
+      entries.forEach(element => {
+        if(element[0] === word){
+          span = `${element[0]} - ${element[1]}`;
+        }
+      });
+
+      if(span !== ''){
+        return (
+          <span key={`spanTip${index}`} className="toolTip"><Tooltip content={span}>{word}</Tooltip> </span>
+        )
+      } else {
+        return word + ' ';
+      }
+
+
+    });
+
+
+    return vocabTip
+
   }
 
 /**
@@ -68,19 +105,18 @@ class Story extends React.Component {
  * @returns {array} - array of arrays of Korean & English
  */
   parseStoryText = (chapter) => {
-    // const engRegex = /^...[a-zA-Z]|^[a-zA-Z]/g;
     const endLineRegex = /(\.$|’$|"$)/gm;
     const englishArray = [];
-    const koreanArray = [];
+    let koreanArray = '';
     for(let i = 0; i< chapter.length; i++){
       let replaceString = chapter[i].replace(endLineRegex, "$1\n");
       if(i % 2 ){
         englishArray.push(replaceString);
       } else {
-        koreanArray.push(replaceString);
+        koreanArray += replaceString;
       }
-
     }
+
     const bothArray = [koreanArray, englishArray];
     return bothArray
   }
@@ -110,7 +146,7 @@ class Story extends React.Component {
 
           <div className="storyText">
             <p className={`${fontSize} koreanText`}>
-              {this.parseStoryText(chapter)[0]}
+              {this.generateToolTips(this.parseStoryText(chapter)[0], index)}
             </p>
             {this.props.showEng ? 
               <p className={`${fontSize} engText`}>{this.parseStoryText(chapter)[1]}</p>

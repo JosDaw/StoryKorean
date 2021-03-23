@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 /**
@@ -26,3 +26,39 @@ export function GetURLParams(props) {
 
   return array
 }
+
+/**
+ * Function to display a tool tip over text
+ * @param {string} props -> content of tooltip and text to display
+ * @returns 
+ */
+export const Tooltip = (props) => {
+  let timeout;
+  const [active, setActive] = useState(false);
+
+  const showTip = () => {
+    timeout = setTimeout(() => {
+      setActive(true);
+    }, props.delay || 400);
+  };
+
+  const hideTip = () => {
+    clearInterval(timeout);
+    setActive(false);
+  };
+
+  return (
+    <span
+      className="tooltipWrapper"
+      onMouseEnter={showTip}
+      onMouseLeave={hideTip}
+    >
+      {props.children}
+      {active && (
+        <span className={`tooltipTip`}>
+          {props.content}
+        </span>
+      )}
+    </span>
+  );
+};
